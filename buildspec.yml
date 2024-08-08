@@ -23,5 +23,5 @@ artifacts:
   files:
     - '**/*'
     - imagedefinitions.json  # Include the image definitions file
-  base-directory: /usr/share/nginx/html
+  base-directory: .
 
