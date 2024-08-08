@@ -1,0 +1,7 @@
+[
+  {
+    "name": "html-app-container",  // Change this to your container name
+    "imageUri": "${ECR_REPO_URL}:latest"  // Use the variable for ECR URL
+  }
+]
+
