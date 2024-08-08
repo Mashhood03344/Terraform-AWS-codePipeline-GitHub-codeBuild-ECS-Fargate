@@ -17,9 +17,11 @@ phases:
     commands:
       - echo Pushing the Docker image to ECR
       - docker push $ECR_REPO_URL:latest
+      - echo '[{"name":"simple-html-app","imageUri":"'"$ECR_REPO_URL"':latest"}]' > imagedefinitions.json
 
 artifacts:
   files:
     - '**/*'
-  base-directory: .
+    - imagedefinitions.json  # Include the image definitions file
+  base-directory: /usr/share/nginx/html
 
