@@ -20,6 +20,6 @@ phases:
 
 artifacts:
   files:
-    - '**/*'  # Adjust this if you want to include specific files
-  base-directory: /usr/share/nginx/html
+    - '**/*'
+  base-directory: .
 
