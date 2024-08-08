@@ -12,13 +12,13 @@ phases:
     commands:
       - echo Building the Docker image
       - docker build -t html-app .
-      - echo "*********************$ECR_REPO_URL**********************************************"
+      - echo "$ECR_REPO_URL"
       - docker tag html-app:latest $ECR_REPO_URL:latest
   post_build:
     commands:
       - echo Pushing the Docker image to ECR
       - docker push $ECR_REPO_URL:latest
-      - echo '[{"name":"simple-html-app","imageUri":"'"$ECR_REPO_URL"':latest"}]' > imagedefinitions.json
+      - echo '[{"name":"simple-html-app","imageUri":\"$ECR_REPO_URL\":latest"}]' > imagedefinitions.json
 
 artifacts:
   files:
